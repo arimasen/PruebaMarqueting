@@ -1,0 +1,217 @@
+html, body{ font-size: 15px; }
+nav {  height: 3.125rem;}
+header {  height: 20rem;}
+.item-box {
+  height: 2.5rem;
+  background: #e4e4e4;
+}
+
+/* #region Nav */
+.navbar{justify-content: flex-end;overflow: visible;z-index: 600;}
+.navbar span{ 
+  position: absolute;
+  padding: 0;
+  top: 7px;  left: 1em;
+ }
+.navbar img { 
+  width: auto;
+  height: 32px;
+}
+
+#mob_menu{
+  display: -ms-flexbox;
+  display: flex;
+  width: 4rem;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+#mob_menu > a{
+  display: block;
+  position: relative;
+  color: white;
+  width: 30px;  height: 24px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#mob_menu span {
+  display: block;
+  position: absolute;
+  height: 4px;  width: 100%;
+  background: white;
+  border-radius: 9px;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+  opacity: 1;
+}
+
+#mob_menu span:nth-child(1) { top: 0; }
+#mob_menu span:nth-child(2) { top: calc(50% - 2px); }
+#mob_menu span:nth-child(3) { top: calc(100% - 4px); }
+
+.navbar.open #mob_menu span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -4%;  left: 14%;
+}
+.navbar.open #mob_menu span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+.navbar.open #mob_menu span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 86%;  left: 13%;
+}
+
+.navbar .nav{
+  position: absolute;
+  top: 0;   right: 0;
+  background-color: #333;
+  width: 100vw;
+  opacity: 0;
+  z-index: 45;
+  pointer-events: none;
+  transition: all 0.2s;
+}
+.navbar.open .nav{
+  top: 47px; right: 0;
+  opacity: 1;
+  pointer-events: initial;
+  transition: all 0.4s;
+}
+
+.navbar a{ color: white; }
+.navbar a:hover{ color: #d4d4d4; }
+
+@media (min-width: 768px){
+  #mob_menu{ display: none; }
+  .navbar .nav{
+    position: relative;
+    top: initial;
+    right: initial;
+    width: initial;
+    opacity: 1;
+    z-index: 45;
+    pointer-events: initial;
+    background-color: transparent;
+ }
+}
+/* #endregion */
+
+/* #region Carousel */
+#head_car .owl-item > div{
+  width: 100%;
+  max-height: 70vh;
+}
+#head_car img{
+  width: 100%;
+  height: auto;
+}
+#head_car.owl-theme .owl-nav {
+  margin-top: 0;
+  font-size: 2rem;
+}
+#head_car.owl-theme .owl-nav [class*=owl-]:hover {
+  background: #171a3f;
+}
+div#index_tab > ul {
+  background-color: #171a3f;
+}
+.owl-item > div > div {
+  position: absolute;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+.owl-item > div > div p {
+  color: white;
+  margin: 0 0 0.3em;
+  font-size: 3.5em;
+  text-shadow: 1px 1px 0 #001, -1px 1px 0 #000;
+}
+
+.owl-prev,.owl-next {
+position: absolute;
+display: block !important;
+width: 15px; height: 100px;
+top: 40%; 
+font-size: 2.5rem !important;
+}
+.owl-prev{ left: 5px; }
+.owl-next { right: 5px; }
+.owl-prev i, .owl-next i {transform : scale(1,6); color: #ccc;}
+/* #endregion */
+
+/* #region Grid */
+.gridblock{
+  border-radius: 2em;
+  min-height: 10em;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+.gridblock.bg1{
+  background-color: #333;
+}
+.gridblock.bg2{
+  background-color: #666;
+}
+.gridblock.bg1.bg_active{
+  background-color: rgb(1, 41, 87);
+}
+.gridblock.bg2.bg_active{
+  background-color: rgb(15, 87, 1);
+}
+/* #endregion */
+
+/* #region Modal */
+#myModal .modal-dialog{
+  border-radius: 20px;
+  background-color: #dcdcdc;
+  padding: 2em;
+}
+
+#myModal .modal-content{ 
+  border: 0 none;
+  border-radius: 18px;
+}
+#myModal .modal-body{
+  background-color: #ccc;
+  padding: 2em;
+}
+#myModal button{
+  display: block;
+  position: absolute;
+  top: 0.2em;
+  right: 0.5em;
+}
+/* #endregion */
